@@ -6,6 +6,7 @@ import TransactionTypeBadge from "../_components/type-badge";
 import { Button } from "@/app/_components/ui/button";
 import { PencilIcon, TrashIcon } from "lucide-react";
 import { TRANSACTION_CATEGORY_LABELS, TRANSACTION_PAYMENT_METHOD_LABELS } from "@/app/_constants/transaction";
+import EditTransactionButton from "../_components/edit-transaction-button";
 
 
 
@@ -56,12 +57,10 @@ export const TransactionColumns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "actions",
     header: "",
-    cell: () => {
+    cell: ({row: {original: transaction}}) => {
       return (
         <div className="space-x-1">
-           <Button variant="ghost" size="icon" className="text-muted-foreground">
-              <PencilIcon/>
-          </Button>
+          <EditTransactionButton transaction={transaction}/>
           <Button variant="ghost" size="icon" className="text-muted-foreground">
               <TrashIcon/>
           </Button>
