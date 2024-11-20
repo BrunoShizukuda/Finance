@@ -13,7 +13,7 @@ interface SummaryCardProps {
 
 const SummaryCard = ({icon, title, amount, size = "small"} :SummaryCardProps ) => {
     return (  
-    <Card>
+    <Card className={`${size === 'large' ? "bg-white bg-opacity-5" : ""}`}>
         <CardHeader className="flex-row items-center gap-4">
             {icon}
             <p 
