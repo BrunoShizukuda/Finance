@@ -1,5 +1,5 @@
 import { TransactionCategory, TransactionPaymentMethod, TransactionType } from "@prisma/client"
-import { Label } from "@radix-ui/react-label";
+
 
 export const TRANSACTION_CATEGORY_LABELS = {
     EDUCATION: "Educação",
