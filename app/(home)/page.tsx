@@ -8,6 +8,7 @@ import { isMatch } from "date-fns";
 import TransactionsPieChart from "./_components/transaction-pie-chart";
 import { getDashboard } from "../_data/get-dashboard";
 import ExpensesPerCategory from "./_components/expenses-per-category";
+import LastTransaction from "./_components/last-transaction";
 
 
 
@@ -45,6 +46,7 @@ const Home = async ({
                   <ExpensesPerCategory expensesPerCategory={dashboard.totalExpensePerCategory}/>
                 </div>
            </div>
+           <LastTransaction lastTransactions={dashboard.lastTransactions}/>
         </div>
           
       </div>
