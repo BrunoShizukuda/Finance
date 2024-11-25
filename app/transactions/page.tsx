@@ -6,6 +6,8 @@ import Navbar from "../_components/ui/nav-bar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+import { getCurrentMonthTransaction } from "../_data/get-dashboard/get-current-month-transaction";
+import { canUserAddTransaction } from "../_data/get-dashboard/can-user-add-transaction";
 
 const TransactionPage = async () => {
   const {userId} = await auth()
@@ -17,7 +19,7 @@ const TransactionPage = async () => {
       userId,
     }
   });
-  
+  const userCanAddTransaction = await canUserAddTransaction()
   return (
     <>
     <Navbar/>
@@ -25,7 +27,7 @@ const TransactionPage = async () => {
       {/* Titulo e Botão */}
       <div className="flex w-full items-center justify-between">
         <h1 className="text-2xl font-bold">Transações</h1>
-        <AddTransactionButton />
+        <AddTransactionButton userCanAddTransaction= {userCanAddTransaction}/>
       </div>
       <ScrollArea>
         <DataTable columns={TransactionColumns} data={transactions} />
