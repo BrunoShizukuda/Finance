@@ -10,11 +10,10 @@ import { getDashboard } from "../_data/get-dashboard";
 import ExpensesPerCategory from "./_components/expenses-per-category";
 import LastTransaction from "./_components/last-transaction";
 import { canUserAddTransaction } from "../_data/get-dashboard/can-user-add-transaction";
-<<<<<<< HEAD
 import AirReportButton from "./_components/ai-report-button";
 
-=======
->>>>>>> 1d73c2d191928063bf135ba6585f713f3c80f367
+
+
 
 
 
@@ -35,10 +34,9 @@ const Home = async ({
   }
   const dashboard = await getDashboard(month)
   const userCanAddTransaction = await canUserAddTransaction()
-<<<<<<< HEAD
   const user = await clerkClient().users.getUser(userId)
-=======
->>>>>>> 1d73c2d191928063bf135ba6585f713f3c80f367
+
+
   return (
     <>
       <Navbar />
