@@ -30,7 +30,6 @@ const Home = async ({
   }
   const dashboard = await getDashboard(month)
   const userCanAddTransaction = await canUserAddTransaction()
-  const user = await clerkClient().users.getUser(userId)
   return (
     <>
       <Navbar />
