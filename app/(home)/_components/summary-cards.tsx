@@ -8,14 +8,15 @@ interface SummaryCard {
     depositsTotal: number;
     investimentsTotal: number;
     expensesTotal: number;
+    userCanAddTransaction?: boolean;
 }
 
-const SummaryCards = async ({balance, depositsTotal, investimentsTotal, expensesTotal} : SummaryCard) => {
+const SummaryCards = async ({balance, depositsTotal, investimentsTotal, expensesTotal, userCanAddTransaction} : SummaryCard) => {
     
     return ( <div className="space-y-6">
         {/* Primeiro Card*/}
         
-        <SummaryCard icon={<WalletIcon size={16}/>} title="Saldo" amount={balance} size="large"/>
+        <SummaryCard icon={<WalletIcon size={16}/>} title="Saldo" amount={balance} size="large" usercanAddTransaction={userCanAddTransaction}/>
 
         {/* Outros cards*/}
         <div className="grid grid-cols-3 gap-5">
