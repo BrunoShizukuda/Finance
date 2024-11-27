@@ -6,6 +6,10 @@ import Navbar from "../_components/ui/nav-bar";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
+<<<<<<< HEAD
+=======
+import { getCurrentMonthTransaction } from "../_data/get-dashboard/get-current-month-transaction";
+>>>>>>> 1d73c2d191928063bf135ba6585f713f3c80f367
 import { canUserAddTransaction } from "../_data/get-dashboard/can-user-add-transaction";
 
 const TransactionPage = async () => {
